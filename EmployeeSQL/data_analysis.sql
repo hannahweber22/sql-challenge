@@ -6,6 +6,11 @@ JOIN salaries
 ON employees.emp_no = salaries.emp_no
 ;
 
+--2. List the first name, last name, and hire date for the employees who were hired in 1986.
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE hire_date like '%1986'
+;
 
 --3. List the manager of each department along with their department number, department name, employee number, last name, and first name.
 SELECT dept_manager.dept_no, dept_name, employees.emp_no, last_name, first_name
@@ -55,7 +60,8 @@ WHERE dept_name = 'Sales' OR dept_name = 'Development'
 SELECT last_name, COUNT(last_name) 
 FROM employees
 GROUP BY last_name
-ORDER BY last_name DESC;
+ORDER BY last_name DESC
+;
 
 
 
